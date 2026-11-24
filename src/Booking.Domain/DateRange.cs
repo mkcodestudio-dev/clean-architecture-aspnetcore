@@ -1,12 +1,7 @@
 namespace Booking.Domain;
 
-/// <summary>Raised when a business rule is broken.</summary>
 public sealed class DomainException(string message) : Exception(message);
 
-/// <summary>
-/// A stay from check-in (inclusive) to check-out (exclusive).
-/// Two stays that touch (one checks out the day the next checks in) do not overlap.
-/// </summary>
 public sealed record DateRange
 {
     public DateRange(DateOnly checkIn, DateOnly checkOut)
